@@ -33,7 +33,7 @@ h1 {
 
 .container {}
 
-.center {
+button {
     margin: 0;
     position: absolute;
     top: 85%;
@@ -41,13 +41,12 @@ h1 {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     border-radius: 25px;
-    background: #8729e2;
-    background-color: #8729e2;
-    color: #e4e0dd;
+    background: #600ee1;
     width: 400px;
     height: 50px;
     text-align: center;
     padding: 10px 70px;
     font-size: 30px;
-
+    color: aliceblue;
+    font-size: 29px;
 }
