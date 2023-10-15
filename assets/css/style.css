@@ -9,6 +9,7 @@
 
 body {
     min-height: 100vh;
+    width:100%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -21,7 +22,8 @@ main {
     height: 100vh;
     width: 100%;
     background: url('../image/quiz.png') no-repeat center center/cover;
-
+    
+   
 }
 
 h1 {
@@ -31,7 +33,7 @@ h1 {
     font-size: 60px;
 }
 
-.container {}
+
 
 button {
     margin: 0;
@@ -49,4 +51,19 @@ button {
     font-size: 30px;
     color: aliceblue;
     font-size: 29px;
+}
+#second {
+    height: 100vh;
+    width: 100%;
+    background: url('../image/istockphoto-1450558443-612x612.jpg') no-repeat center center/cover;
+
+}
+.app {
+    background: #600ee1;
+    width: 90%;
+    max-width: 600px;
+    margin: 130px 50px 0;
+    border-radius: 10px;
+    padding: 30px;
+
 }
