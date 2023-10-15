@@ -43,3 +43,15 @@ const questions = [
  const questionPart = document.getElementById("question");
  const answerButton = document.getElementById("answer");
  const nextButton = document.getElementById("next");
+
+
+ let currentQuestionIndex = 0;
+ let score = 0;
+
+ function startQuiz(){
+    let currentQuestionIndex = 0;
+    let score = 0;
+    nextButton.innerHTML = "Next";
+     showQuestion();
+
+ }
