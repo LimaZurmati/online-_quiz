@@ -55,3 +55,8 @@ const questions = [
      showQuestion();
 
  }
+ function showQuestion(){
+    let currentQuestion = questions[currentQuestionIndex];
+    let questionNo = currentQuestion + 1;
+    questionElement.innerHTML = questionNo + "." + currentQuestion.question;
+ }
