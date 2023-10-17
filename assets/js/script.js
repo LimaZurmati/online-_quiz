@@ -112,6 +112,10 @@ function showQuestion() {
         button.innerHTML = answer.text;
         button.classList.add("btn");
         answerButton.appendChild(button);
+        if(answer.correct){
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener("click" , slectAnswer)
 
 
     });
@@ -124,6 +128,15 @@ function resetState(){
     }
     
 }
+ function slectAnswer (e){
+    const slectBtn = e.target;
+    const isCorrect = slectBtn.dataset.correct === "true";
+    if(isCorrect){
+        slectBtn.classList.add("correct");
+    }else {
+        slectBtn.classList.add("incorecct");
+    }
 
+ }
 
 startQuiz();
