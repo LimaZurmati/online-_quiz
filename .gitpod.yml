@@ -1,16 +1,15 @@
-image:
-  file: .gitpod.dockerfile
+image: gitpod/workspace-full
+
+# Commands that will run on workspace start
 tasks:
-  - init: . ${GITPOD_REPO_ROOT}/.vscode/init_tasks.sh
-    command: /home/gitpod/.pg_ctl/bin/pg_start > /dev/null
-  - command: . ${GITPOD_REPO_ROOT}/.vscode/uptime.sh &
-vscode:
-  extensions:
-    - ms-python.python
-    - formulahendry.auto-close-tag
-    - eventyret.bootstrap-4-cdn-snippet
-    - hookyqr.beautify
-    - matt-rudge.auto-open-preview-panel
-    - ms-toolsai.jupyter
-    - ms-toolsai.jupyter-keymap
-    - ms-toolsai.jupyter-renderers
+    - name: Setup, Install & Build
+      before: yarn global add express
+      init: yarn install
+      command: yarn build
+
+# Ports to expose on workspace startup
+ports:
+    - port: 3000
+      onOpen: open-preview
+      name: Website
+      description: Website Preview
