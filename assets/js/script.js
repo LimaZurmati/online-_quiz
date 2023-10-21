@@ -91,8 +91,8 @@ let currentQuestionIndex = 0;
 let score = 0;
 
 function startQuiz() {
-    let currentQuestionIndex = 0;
-    let score = 0;
+     currentQuestionIndex = 0;
+     score = 0;
     nextButton.innerHTML = "Next";
     showQuestion();
 
