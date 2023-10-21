@@ -1,9 +1,8 @@
-const questions = [{
-        question: 'what is the second name of kabul?',
-        answer: [{
-                text: "kabul",
-                correct: true
-            },
+const questions = [
+    {
+        question: "what is the second name of kabul?",
+        answers: [
+            { text: "kabul", correct: true },
             {
                 text: "herat",
                 correct: false
@@ -21,7 +20,7 @@ const questions = [{
     },
     {
         question: 'what is css?',
-        answer: [{
+        answers: [{
                 text: "stands for Cascading Style Sheets",
                 correct: true
             },
@@ -42,7 +41,7 @@ const questions = [{
     },
     {
         question: 'what is html?',
-        answer: [{
+        answers: [{
                 text: "Hyper Text Markup Language",
                 correct: true
             },
@@ -62,7 +61,7 @@ const questions = [{
         ]
     }, {
         question: 'what is js?',
-        answer: [{
+        answers : [{
                 text: " scripting language",
                 correct: true
             },
@@ -83,9 +82,9 @@ const questions = [{
     }
 ];
 
-const questionPart = document.getElementById("question");
-const answerButtons = document.getElementById("answer");
-const nextButton = document.getElementById("next");
+const questionElement = document.getElementById("question");
+const answerButtons  = document.getElementById("answer-buttons");
+const nextButton = document.getElementById("next-btn");
 
 
 let currentQuestionIndex = 0;
@@ -100,10 +99,11 @@ function startQuiz() {
 }
 
 function showQuestion() {
-    resetState();
+   resetState();
+    
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestion + 1;
-    questionElement.innerHTML = questionNo + "." + currentQuestion.question;
+    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
 
 
@@ -111,32 +111,25 @@ function showQuestion() {
         const button = document.createElement("button");
         button.innerHTML = answer.text;
         button.classList.add("btn");
-        answerButton.appendChild(button);
+        answerButtons.appendChild(button);
         if(answer.correct){
-            button.dataset.correct = answer.correct
+            button.dataset.correct = answer.correct;
+
         }
-        button.addEventListener("click" , slectAnswer)
-
-
+        button.addEventListener("click", selectAnswer);
+     
     });
+  
 }
-
-function resetState(){
-    nextButton.style.display = "none";
+  function resetState(){
+    nextButton.style.display = "none;"
     while(answerButtons.firstChild){
         answerButtons.removeChild(answerButtons.firstChild);
     }
-    
-}
- function slectAnswer (e){
-    const slectBtn = e.target;
-    const isCorrect = slectBtn.dataset.correct === "true";
-    if(isCorrect){
-        slectBtn.classList.add("correct");
-    }else {
-        slectBtn.classList.add("incorecct");
-    }
+  }
+  function selectAnswer (e){
 
- }
+  }
 
 startQuiz();
+
